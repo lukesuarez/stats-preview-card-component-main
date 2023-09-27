@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca:wght@400;700&display=swap');
+
+:root {
+    --main-bg:hsl(233, 47%, 7%);
+    --card-bg: hsl(244, 38%, 16%);
+    --accent: hsl(277, 64%, 61%);
+    --overlay:hsl(276, 58%, 35%);
+    --main-t: hsl(0, 0%, 100%);
+    --main-p: hsla(0, 0%, 100%, 0.75);
+    --stats-h: hsla(0, 0%, 100%, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    
+}
+
+.container {
+    background: var(--main-bg);
+    color: var(--main-t);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.card {
+    background:var(--card-bg);
+    border-radius: 7px;
+    display: flex;
+
+}
+
+.card-left {
+    padding: 4rem;
+    width: 50%;
+
+}
+
+.card-header {
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight:bold;
+}
+
+.accent {
+    color: var(--accent);
+}
+
+.description {
+    margin: 2rem 1rem 3rem 0;
+    color: var(--main-p);
+}
+.stats {
+
+    display: flex;
+    gap: 50px;
+    justify-items: center;
+    align-items: center;
+    
+}
+
+
+
+.number {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.name {
+    margin-top: 0.5em;
+    font-size: 0.8em;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--stats-h);
+    letter-spacing: 1.5px;
+}
+
+.card-right {
+    background: url(/stats-preview-card-component-main/images/image-header-desktop.jpg) center no-repeat;
+    width: 50%;
+    background-size: cover;
+    position: relative;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.overlay {
+    position: absolute;
+    background: var(--overlay);
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    
+}
+
+
+
+footer {
+    position:fixed;
+    width: 100%;
+    bottom: 2em;
+    text-align: center;
+    color: var(--main-t);
+    
+}
+
+
+@media screen and (max-width:375px) {
+    .card {
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        height: 90vh;
+        width: 90vw;
+    }
+
+    .card-left {
+        width: auto;
+        height: 70%;
+        text-align: center;
+        padding: 1.15rem;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+
+    .card-right {
+        background: url(/stats-preview-card-component-main/images/image-header-mobile.jpg) center no-repeat;
+        width: 100%;
+        height: 30%;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+        background-size: cover;
+    }
+
+    footer {
+        display: none;
+    }
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
